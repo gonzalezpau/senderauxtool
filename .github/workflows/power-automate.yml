@@ -2,7 +2,7 @@ name: Execute Power Automate
 
 on:
   schedule:
-    - cron: '0 22 3 6 *'
+    - cron: '0 23 3 6 *'
   workflow_dispatch:
 
 jobs:
@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Call Power Automate Webhook
         run: |
-          curl -X POST \
-            -H "Content-Type: application/json" \
-            -d '{"action":"execute"}' \
+          curl -X POST \\
+            -H "Content-Type: application/json" \\
+            -d '{"action":"execute"}' \\
             "https://default66b9ec7f68a64d5ba8fea7bac3927e.7c.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/d5047fe58f1d4d35b6495efb179d10fd/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=q8sxaY_luRvVvPnaV4YKUK2nXbAJ2YVP7mkI-zqsvNM"
